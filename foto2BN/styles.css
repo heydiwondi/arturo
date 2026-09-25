@@ -239,10 +239,10 @@ button {
   position: relative;
   min-height: 650px
 }
-
+/*
 .about-image img {
   filter: grayscale(100%)
-}
+}*/
 
 .image-caption {
   position: absolute;
@@ -329,7 +329,7 @@ h2 i {
 }
 
 .service-image img {
-  filter: grayscale(100%);
+  /*filter: grayscale(100%);*/
   transition: transform .7s
 }
 
@@ -417,9 +417,9 @@ h2 i {
   font-size: 15px
 }
 
-.location-image img {
+/*.location-image img {
   filter: grayscale(100%)
-}
+}*/
 
 .locations {
   display: flex;
