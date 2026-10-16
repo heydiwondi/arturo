@@ -511,9 +511,9 @@ h2 i {
 }
 
 .contact-image img {
-  filter: grayscale(100%);
+  /*filter: grayscale(100%);
   mix-blend-mode: multiply;
-  opacity: .72
+  opacity: .72*/
 }
 
 .footer {
@@ -759,5 +759,165 @@ h2 i {
 
   .contact h2 {
     font-size: 68px
+  }
+}
+
+/* =========================================
+   MANIFESTO + FOTO FINALE
+   ========================================= */
+
+.manifesto-final {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: clamp(380px, 58vw, 760px);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #171714;
+  color: #fff;
+}
+
+/* Fotografia di sfondo */
+.manifesto-final__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("img/sala_apparecchiata.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.01);
+}
+
+/* Gradiente per mantenere il testo leggibile */
+.manifesto-final::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.30) 35%,
+    rgba(0, 0, 0, 0.58) 100%
+  );
+}
+
+/* Contenuto sovrapposto */
+.manifesto-final__content {
+  width: min(100% - 64px, 1000px);
+  margin-inline: auto;
+  padding-block: clamp(60px, 10vw, 130px);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3vw, 34px);
+}
+
+/* Virgolette decorative */
+.manifesto-final__quote {
+  display: block;
+  font: inherit;
+  font-size: clamp(20px, 7vw, 7px);
+  line-height: 0.65;
+  opacity: 0.9;
+}
+
+/* Testo principale: mantiene il font del sito */
+.manifesto-final__text {
+  max-width: 900px;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: clamp(20px, 3.1vw, 42px);
+  font-weight: inherit;
+  line-height: 1.35;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+/* Firma */
+.manifesto-final__brand {
+  display: block;
+  font-family: inherit;
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: inherit;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .manifesto-final {
+    min-height: 480px;
+  }
+
+  .manifesto-final__image {
+    background-position: center center;
+  }
+
+  .manifesto-final__content {
+    width: calc(100% - 40px);
+    padding-block: 70px;
+    gap: 25px;
+  }
+
+  .manifesto-final__text {
+    font-size: clamp(21px, 4.2vw, 30px);
+    line-height: 1.4;
+    letter-spacing: 0.025em;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 480px) {
+  .manifesto-final {
+    min-height: 440px;
+  }
+
+  .manifesto-final__image {
+    background-position: 55% center;
+  }
+
+  .manifesto-final__content {
+    width: calc(100% - 32px);
+    padding-block: 56px;
+    gap: 24px;
+  }
+
+ 
+
+  .manifesto-final__text {
+    font-size: clamp(18px, 5.2vw, 23px);
+    line-height: 1.5;
+    letter-spacing: 0.015em;
+  }
+
+  .manifesto-final__brand {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
+}
+
+/* Smartphone molto stretti */
+@media (max-width: 360px) {
+  .manifesto-final {
+    min-height: 400px;
+  }
+
+  .manifesto-final__content {
+    width: calc(100% - 24px);
+  }
+
+  .manifesto-final__text {
+    font-size: 17px;
   }
 }
